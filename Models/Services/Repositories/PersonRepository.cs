@@ -25,7 +25,7 @@ namespace MvcSinglePage.Models.Services.Repositories
             }
             try
             {
-                _projectDbContext.Person.Add(person);
+                _projectDbContext.Add(person);
                 await _projectDbContext.SaveChangesAsync();
             }
             catch (Exception)
@@ -45,6 +45,7 @@ namespace MvcSinglePage.Models.Services.Repositories
             }
             try
             {
+                _projectDbContext.Update(person);
                 await _projectDbContext.SaveChangesAsync();
             }
             catch (Exception)
